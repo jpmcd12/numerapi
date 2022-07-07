@@ -920,6 +920,13 @@ class Api:
             {'data': {'v2ChangePayoutSelection': 'payout selection updated'}}
 
         """
+        
+        if corrMultiplier not in [0,1]:
+            raise ValueError("CorrMultiplier only accepts values of 0 or 1.")
+        
+        if tcMultiplier not in [0, 0.5, 1, 2, 3]
+            raise ValueError("tcMultiplier only accepts values: 0, 0.5, 1, 2, or 3.")
+
         query = """mutation ($corrMultiplier: Float!
                              $modelId: String!
                              $selection: String!
